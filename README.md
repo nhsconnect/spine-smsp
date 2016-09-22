@@ -1,1 +1,1 @@
-# spine-smsp
+# nhsconnect-documentation-theme
