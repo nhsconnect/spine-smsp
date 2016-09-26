@@ -2,13 +2,13 @@
 output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
 
-topnav_title: Site Title and Tag Line
+topnav_title: Spine Mini Services
 # this appears on the top navigation bar next to the home button
 
-site_title: Site Title
+site_title: Introduction to SMSP
 # this appears in the html browser tab for the site title (seen mostly by search engines, not users)
 
-company_name: Company Name
+company_name: NHS Digital
 # this appears in the footer
 
 github_editme_path: /edit/master/
@@ -39,7 +39,7 @@ exclude:
   - .gitignore
 # these are the files and directories that jekyll will exclude from the build
 
-feedback_email: dummy@nhs.net
+feedback_email: richarddobson@nhs.net
 # used as a contact email for the Feedback link in the top navigation bar
 
 feedback_disable: true
@@ -88,8 +88,9 @@ defaults:
 # these are defaults used for the frontmatter for these file types
 
 sidebars:
-- overview_sidebar
-- capability_one_sidebar
+   - overview_sidebar
+   - capability_one_sidebar
+   - capability_two_sidebar
 
 description: "Description of the site."
 # the description is used in the feed.xml file

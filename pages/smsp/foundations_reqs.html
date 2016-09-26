@@ -1,0 +1,441 @@
+---
+title: Foundations Requirements
+keywords: requirements
+sidebar: capability_one_sidebar
+level: one
+toc: false
+permalink: foundations_reqs.html
+folder: product1
+---
+
+<h3>Information Governance – Organisational</h3>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-ORG-01</td>
+<td align="left" markdown="1" style="font-weight:bold">The deploying organisation MUST conform with the Acceptable Use Policy for Spine Mini Services</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+Spine Mini Services may be used by NHS Organisations, for the purposes of provision of care.
+<br />Any other uses will be considered on a case by case basis - they MUST be proposed and agreed in writing by HSCIC.
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-ORG-02</td>
+<td align="left" markdown="1" style="font-weight:bold">The deploying organisation MUST put in place back-office data quality processes to handle any discrepancies which the use of Spine Mini Services reveal</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+Spine Mini Services provide access to National Systems. This is likely to lead to discrepancies being discovered with local records. Back office data qualityprocesses MUST be put in place to handle this, including:<br />
+<ul>
+	<li>Process for front-line staff to notify back-office of a potential discrepancy</li>
+	<li>Back-office investigation process to decide what to do</li>
+	<li>Back-office process to request an update to National Systems where necessary</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-ORG-03</td>
+<td align="left" markdown="1" style="font-weight:bold">The deploying organisation MUST consider the impact of rolling out Spine Mini Services on staff and job roles</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+Typically the use of Spine Mini Services will increase the role of front-line staff in confirming that demographic details are entered correctly at the point of capture.<br />
+Whilst this has many advantages, it is essential that any implications of this additional activity are considered, and any necessary training is provided.<br />
+Piloting and a phased rollout would typically be used as part of this approach.
+</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Information Governance – General</h3>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-IG-01</td>
+<td align="left" markdown="1" style="font-weight:bold">The Mini Services Client Application MUST provide RBAC control over access to its features</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+The Mini Services Client Application MUST protect is functionality with RBAC controls sufficient to meet IG Requirements for a system accessing Spine data. This includes:<br />
+<ul>
+	<li>Implementing role-based access control to authorise users’ access to the system’s functions and data.</li>
+	<li>Restricting access to view audit trails</li>
+	<li>Protecting RBAC configuration data</li><br />
+	Note that the use of local RBAC is acceptable
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-IG-02</td>
+<td align="left" markdown="1" style="font-weight:bold">The Mini Services Client Application MUST provide authentication control over access to its administration and other features</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+Authentication MUST be based on a user identity which is then authenticated at least through the use of a separate password.<br />
+<ul>
+	<li>The use of two-factor authentication mechanisms (eg Smartcard) is encouraged but not mandated</li>
+	<li>Where passwords are used then password management processes and policy enforcement are essential. The guidance documentation referenced in the Trust Operating Model (“Password Policy for Non-Spine Connected Applications”) therefore applies.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-IG-03</td>
+<td align="left" markdown="1" style="font-weight:bold">The Mini Services Client Application MUST display basic security context information to the user</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+This includes:<br />
+<ul>
+	<li>Computer misuse warning on start-up</li>
+	<li>Confirmation of the logged on user’s current role and organisation</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-IG-04</td>
+<td align="left" markdown="1" style="font-weight:bold">The Mini Services Client Application SHOULD ensure appropriate labelling of personal data</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+This includes protective labelling of personal data both on-screen and in printed output.
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-IG-05</td>
+<td align="left" markdown="1" style="font-weight:bold">The Mini Services Client Application MUST be hosted in a managed and secure environment</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+The capability and responsibility of the deploying organisation, and acknowledgement of the risk ownership, is to be demonstrated through the maintenance of an approved IG Statement of Compliance (IGSoC1)
+</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Audit</h3>
+
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-AUD-01</td>
+<td align="left" markdown="1" style="font-weight:bold">The Mini Services Client Application MUST provide a secure audit trail</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+This includes:<br />
+<ul>
+	<li>The Mini Services Client Application MUST provide a secure, tamper-proof audit store sufficient to meet IG Requirements for a system accessing National Systems data.</li>
+	<li>This includes protecting the audit store from deletion or modification, and ensuring that audit trails are enabled at all times.</li>
+	<li>Audit data MUST be stored for periods as defined by DH policy and described in the NHS Records Management Code of Practice Parts 1 and 2.</li>
+	<li>(see https://www.gov.uk/government/publications/records-management-nhs-code-of-practice )</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-AUD-02</td>
+<td align="left" markdown="1" style="font-weight:bold">Events that MUST be audited</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+The Mini Services Client Application MUST audit all relevant events, sufficient to meet IG Requirements for a system accessing National Systems data. This includes:<br />
+<ul>
+	<li>All information exchanges with NHS CRS, including messages sent and received via Spine Mini Services</li>
+	<li>Changes to reference and configuration data</li>
+	<li>Successful login, unsuccessful login attempts and logouts, password changes</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-AUD-03</td>
+<td align="left" markdown="1" style="font-weight:bold">Data Items that MUST be audited</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+The Mini Services Client Application MUST capture relevant data items in the audit store sufficient to meet IG Requirements for a system accessing National Systems data. This includes:<br />
+<ul>
+	<li>User Identity (see MSCA-AUD-04 below for more about what this must contain)</li>
+	<li>Timestamp (synchronised from the national time service)</li>
+	<li>Audit event details</li>
+	<li>Identity of associated data (e.g. patient’s NHS Number)</li>
+	<li>A sequence number to help protect against tampering</li>
+	<li>The originating system identifier</li>
+	<li>Message ID of any messages sent to the Mini Services interface</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-AUD-04</td>
+<td align="left" markdown="1" style="font-weight:bold">The Mini Services Client Application MUST provide an Audit Identifier for the initiating user when calling Spine Mini Services</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+The ITK Distribution Envelope provides an “Audit Identifier” field for the purpose of allowing the client application to pass an identity for the end user initiating the Mini Services request.<br />
+<ul>
+	<li>This Audit Identifier field MUST be populated by the Mini Services Client Application.</li>
+	<li>It MUST contain an ITK format of Audit Identity (see example below)</li>
+	<li>Additionally if an SMSP client system is smartcard enabled then the User Role Profile and User ID MUST both be supplied, and the Role ID MAY be supplied</li>
+	<li>If the Mini Services Client Application is not smartcard enabled then an alternative local unique identifier for the user MUST be presented in the Audit Identifier field.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 2</td>
+<td align="left" markdown="1">
+An SMSP itk audit identity may look like this.<br />
+type="1.2.826.0.1285.0.2.0.107" uri="868000003114"<br />
+Where the uri value is the accredited system id (asid)of the connected cunsumer system.
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-AUD-05</td>
+<td align="left" markdown="1" style="font-weight:bold">Audit entries MUST be available on a queryable interface</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+The Mini Services Client Application MUST provide an interface for interrogating the audit log sufficient to meet IG Requirements for a system accessing National Systems data.<br />
+Searchable parameters MUST include user identifier, Message ID, Patient ID, date/time.
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-AUD-06</td>
+<td align="left" markdown="1" style="font-weight:bold">The Mini Services Client Application MUST utilise a Stratum 3 time source as a minimum</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+The Mini Services Client Application MUST utilise a Stratum 3 time source as a minimum however implementers SHOULD consider the use of Stratum 2 or above.<br />
+This enables meaningful comparison and sorting of messages based on timestamps. It is particularly important to enable an end-to-end trace of events to be established all the way from the Mini Services Client Application, through the SMSP.
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-AUD-07</td>
+<td align="left" markdown="1" style="font-weight:bold">Audit timestamps generated by Mini Services Client Application MUST comply with issued guidance on time zones</td>
+</tr>
+</tbody>
+</table>
+

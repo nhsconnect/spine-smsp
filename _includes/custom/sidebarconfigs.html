@@ -4,6 +4,9 @@
 {% elsif page.sidebar == "capability_one_sidebar" %}
 {% assign sidebar = site.data.sidebars.capability_one_sidebar.entries %}
 
+{% elsif page.sidebar == "capability_two_sidebar" %}
+{% assign sidebar = site.data.sidebars.capability_two_sidebar.entries %}
+
 {% else %}
 {% assign sidebar = site.data.sidebars.overview_sidebar.entries %}
 {% endif %}
@@ -18,4 +21,8 @@ sidebar configuration for print files
 
 {% if site.product == "capability_one" %}
 {% assign sidebar_pdf = site.data.sidebars.capability_one_sidebar.entries %}
+{% endif %}
+
+{% if site.product == "capability_two" %}
+{% assign sidebar_pdf = site.data.sidebars.capability_two_sidebar.entries %}
 {% endif %}

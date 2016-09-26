@@ -1,0 +1,14 @@
+colume_1,requirement,column_3,details
+,MSCA_PDS_01,,The Mini Services Client Application SHOULD have an easy_to_use User Interface  which encourages best_practice usage of PDS
+,MSCA_PDS_02,,The Mini Services Client Application SHOULD coordinate seamlessly between local and PDS tracing
+,MSCA_PDS_03,,The Mini Services Client Application MUST support the user in ensuring that patients are accurately traced
+,MSCA_PDS_04,,If the patient cannot be traced then the Mini Services Client Application SHOULD allow the user to create a new local record
+,MSCA_PDS_05,,The Mini Services Client Application SHOULD provide for synchronisation of local data with PDS at as many relevant events as possible
+,MSCA_PDS_06,,The Mini Services Client Application MUST display the NHS Number correctly
+,MSCA_PDS_07,,The Mini Services Client Application SHOULD use wildcards appropriately
+,MSCA_DQ_01,,The Mini Services Client Application MUST provide safe handling and resolution of duplicate NHS Numbers
+,MSCA_DQ_02,,The Mini Services Client Application MUST provide for both logical and permanent deletion of records
+,MSCA_DQ_03,,The Mini Services Client Application MUST provide safe handling and resolution of superseded NHS Numbers
+,MSCA_DQ_04,,The Mini Services Client Application MUST provide safe handling and resolution of records marked as invalid on PDS
+,MSCA_DQ_05,,The Mini Services Client Application SHOULD provide data quality reports
+,MSCA_DQ_06,,The Mini Services Client Application SHOULD trigger a back_office resolution process where local discrepancies with PDS are detected

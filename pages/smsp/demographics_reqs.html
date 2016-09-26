@@ -1,0 +1,523 @@
+---
+title: Demographic Requirements
+keywords: requirements
+sidebar: capability_two_sidebar
+toc: false
+permalink: demographics_reqs.html
+folder: product1
+---
+
+<h3>Information Governance – Organisational</h3>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">SMSP- MESSAGES-001</td>
+<td align="left" markdown="1" style="font-weight:bold">Appropriate usage of National Application services MUST be elaborated in documentation</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+The SMSP MUST provide documentation that elaborates the message mapping from the SMSP API to the MIM messaging used to access National Applications in order for DHID to assure suitability. This must also take into account how these messages interact in the context of any caching that may be implemented (see SMSP-CACHE-002: Design documentation MUST consider caching).
+</td>
+</tr>
+</tbody>
+</table>
+
+<h3>PDS Mini Service to Spine Service - Error Mapping</h3>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">SMSP-ERR-005</td>
+<td align="left" markdown="1" style="font-weight:bold">Error codes MUST provide sufficient detail about the outcome of calls to national applications</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td colspan="1">
+There are many scenarios where a final outcome of one or more calls to PDS is that a business error is returned from PDS itself. This is important information to pass back to the SMSP client so that it has the opportunity to handle it appropriately and/or inform the user about the nature of the problem.<br />
+Whilst the precise details of error handling and mapping are a responsibility of each supplier’s implementation, the following business error scenarios MUST be distinguishable by use of the appropriate SMSP error code:<br />
+<table>
+<colgroup>
+<col width="70%" />
+<col width="30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Business Error Scenario</th>
+<th align="left">SMSP Error Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1">No match found<br />
+The parameters supplied were not a match to any Service User record in the PDS database. Error code 1 is a typical example of one error code which could have been returned by PDS in this scenario.</td>
+<td align="left" markdown="1">
+DEMOG-0001
+</td>
+</tr>
+
+<tr>
+<td align="left" markdown="1">Multiple Matches<br />
+The parameters supplied were not able to identify a single match in PDS – rather multiple potential matches were found. Error code 7 is a typical example of one error code which could have been returned by PDS in this scenario.</td>
+<td align="left" markdown="1">
+DEMOG-0007
+</td>
+</tr>
+
+<tr>
+<td align="left" markdown="1">NHS Number Superseded<br />
+The NHS Number supplied as a parameter was matched with a record in PDS, but identified as an NHS number that has been superseded via a merge and is no longer a current valid NHS Number. However, a replacement (superseding) NHS number is available and is being returned. Error codes 17 or 44 are typical examples of two error codes which could have been returned by PDS in this scenario.</td>
+<td align="left" markdown="1">
+DEMOG-0017
+</td>
+</tr>
+
+<tr>
+<td align="left" markdown="1">NHS Number Invalid<br />
+The NHS Number supplied exists on PDS but is no longer in use and no replacement (superseding) NHS Number is available. Error code 22 is a typical example of one error code which could have been returned by PDS in this scenario.</td>
+<td align="left" markdown="1">
+DEMOG-0022
+</td>
+</tr>
+
+<tr>
+<td align="left" markdown="1">NHS Number Not Verified<br />
+The NHS Number supplied exists on PDS and is still in use but the demographic data also supplied does not result in the correct degree of matching. Error code 40 is a typical example of one error code which could have been returned by PDS in this scenario.</td>
+<td align="left" markdown="1">
+DEMOG-0040
+</td>
+</tr>
+
+<tr>
+<td align="left" markdown="1">Not a new style NHS Number <br />
+The NHS Number supplied is not a 10 digit new style NHS Number. Error code 42 is a typical example of one error code which could have been returned by PDS in this scenario.</td>
+<td align="left" markdown="1">
+DEMOG-0042
+</td>
+</tr>
+
+</tbody>
+</table>
+<br />
+Note that with the examples given above there may also be another accompanying error code returned by PDS, as specified in the error base, and that the examples above are illustrative not exhaustive. Alternative mappings by suppliers may be considered. The examples given do not imply specific behaviour of the SMSP system.<br />
+For business error scenarios returned by PDS other than those listed above then a generic code of DEMOG-9999 MAY be used as a default.<br />
+NB: Validation errors detected by PDS are however a special case – see SMSP-ERR-006 for more about this.
+</td>
+</tr>
+</tbody>
+</table>
+
+<h3>PDS - General</h3>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-PDS-01</td>
+<td align="left" markdown="1" style="font-weight:bold">The Mini Services Client Application SHOULD have an easy-to-use User Interface, which encourages best-practice usage of PDS</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+Factors to consider include:
+<ul>
+	<li>Minimal keystrokes needed, tab between fields possible etc</li>
+	<li>Uses a consistent set of search criteria for both local and PDS traces</li>
+	<li>Makes it easy for the user to perform a basic trace (e.g. NHS Number, Surname, DOB, Gender, Postcode)</li>
+	<li>Allows the user to refine their search if unsuccessful initially</li>
+	<li>Also allows the user to make more advanced searches if they really need to (e.g. use of wildcards, partial dates)</li>
+	<li>Provides client-side validation to catch obvious input errors immediately</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-PDS-02</td>
+<td align="left" markdown="1" style="font-weight:bold">The Mini Services Client Application SHOULD coordinate seamlessly between local and PDS tracing</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+The preferred approach would be to attempt to trace locally first, and then to transition seamlessly to a PDS trace if no match is found locally
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-PDS-03</td>
+<td align="left" markdown="1" style="font-weight:bold">The Mini Services Client Application MUST support the user in ensuring that patients are accurately traced</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+To provide this support, the application MUST display sufficient data to enable the user to confirm an accurate match <br />
+NB: There is also an obligation on the user to perform appropriate business processes and best-practice when confirming a patient’s identity
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-PDS-04</td>
+<td align="left" markdown="1" style="font-weight:bold">If the patient cannot be traced then the Mini Services Client Application SHOULD allow the user to create a new local record</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+This allows the patient to be registered without delay to the provision of care
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-PDS-05</td>
+<td align="left" markdown="1" style="font-weight:bold">If the patient cannot be traced then the Mini Services Client Application SHOULD allow the user to create a new local record</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+Recommended events for consideration include:<br />
+<ul>
+	<li>At the commencement of an episode. This includes:
+		<ul>
+			<li>Registering or reception at a GP surgery</li>
+			<li>Reception at an outpatient clinic</li>
+			<li>Beginning of any episode of unscheduled care where patient identity is known</li>
+		</ul>
+	</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 2</td>
+<td align="left" markdown="1">
+<ul>
+	<li>Prior to using patient communication information. This includes:
+		<ul>
+			<li>Prior to using locally-stored patient telephone numbers or addresses</li>
+			<li>Prior to sending correspondence to a patient</li>
+		</ul>
+	</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 3</td>
+<td align="left" markdown="1">
+<ul>
+	<li>Prior to inpatient admission and discharge. This includes:
+		<ul>
+			<li>Prior to the generation of messages containing new or changed demographics to downstream, local systems</li>
+		</ul>
+	</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-PDS-06</td>
+<td align="left" markdown="1" style="font-weight:bold">The Mini Services Client Application MUST display the NHS Number correctly</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+The Mini Services Client Application MUST display and print the NHS number in 3-3-4 format on all screens and printed material, e.g. 123 456 7890<br />
+Bar-coded NHS numbers MUST be in the Information Standards Board ISB/0061-00/2004 format
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-PDS-07</td>
+<td align="left" markdown="1" style="font-weight:bold">The Mini Services Client Application SHOULD use wildcards appropriately</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+The SMSP client application may use wildcards in the tracing criteria. If wildcards are allowed, then the deploying organisation MUST review this as part of the clinical safety assessment of the application.<br />
+Client applications using wildcards in tracing criteria, where a user and/or patient can confirm that the returned candidate PDS record is the correct one (known as an ‘attended’ scenario), present a lower risk of false-positive matches.<br />
+A false-positive match is one where a single candidate PDS record is returned which meets the tracing criteria, but is not in fact the record being sought. User training in the confirmation of record matching will be required.<br />
+Use of wildcards in other ‘non-attended’ tracing scenarios (i.e. where a user and/or patient is not present to confirm the possible match), is likely to increase the risk of false-positive matching of patients with inherent clinical implications. See guidance below for further details.<br />
+Any organisation considering wildcard use must undertake a structured safety assessment of the clinical and governance risks involved.
+Further guidance can be found on:<br />
+http://www.isb.nhs.uk/documents/isb-0160/dscn-18-2009<br />
+The link below provides some guidance around the use of Wildcards that may be helpful, click the link and then select PX (PDS Stand-alone Trace) Screen.<br />
+http://www.hscic.gov.uk/article/2021/Website-Search?q=wildcards+in+trace&go=Go&area=both
+</td>
+</tr>
+</tbody>
+</table>
+
+<h3>PDS - Data Quality</h3>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-DQ-01</td>
+<td align="left" markdown="1" style="font-weight:bold">The Mini Services Client Application MUST provide safe handling and resolution of duplicate NHS Numbers</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+Duplicate NHS Numbers must not be displayed to the user. Rather a back-office process must be triggered to resolve the problem.<br />
+Following appropriate back-office resolution, the system MUST be able to support merge (and unmerge) of local duplicates.
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-DQ-02</td>
+<td align="left" markdown="1" style="font-weight:bold">The Mini Services Client Application MUST provide for both logical and permanent deletion of records</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+It MUST be possible to logically delete and undelete a record.<br />
+There MUST also be a method for the permanent deletion of patient records as a result of a court order under the authority of the Data Protection Act, Section 10.<br />
+The fact that a record has been deleted (whether logically or permanently) and the user that performed it MUST be audited.
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-DQ-03</td>
+<td align="left" markdown="1" style="font-weight:bold">The Mini Services Client Application MUST provide safe handling and resolution of superseded NHS Numbers</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+It MUST be possible to logically delete and undelete a record.<br />
+There MUST also be a method for the permanent deletion of patient records as a result of a court order under the authority of the Data Protection Act, Section 10.<br />
+The fact that a record has been deleted (whether logically or permanently) and the user that performed it MUST be audited.
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-DQ-04</td>
+<td align="left" markdown="1" style="font-weight:bold">The Mini Services Client Application MUST provide safe handling and resolution of records marked as “invalid” on PDS</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+Invalid records will be identified by the Response Code returned from the Mini Services interface.
+<ul>
+	<li>An advisory message MUST inform the user that the record is wrongly identified.</li>
+	<li>While this (national) back-office resolution is in progress then there is a potential clinical risk due to mis-identification of the patient. Therefore the local system MUST warn the user on every access that
+		<ul>
+			<li>the NHS number being used is no longer valid</li>
+			<li>the record is being referred to back-office for processing</li>
+			<li>all demographic and clinical information for this patient must be regarded with caution until the processing is complete</li>
+		</ul>
+	</li>
+	<li>A local back-office process MUST be triggered to alert local administrators to the problem. This alert MUST contain sufficient identifying demographics to allow the back office to find the relevant record in the local database.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-DQ-05</td>
+<td align="left" markdown="1" style="font-weight:bold">The Mini Services Client Application SHOULD provide data quality reports</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+These reports allow for proactive identification of local data quality issues, including duplicate NHS Numbers
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Ref</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" markdown="1" bgcolor="#FFCC99" style="font-weight:bold">MSCA-DQ-06</td>
+<td align="left" markdown="1" style="font-weight:bold">The Mini Services Client Application SHOULD trigger a back-office resolution process where local discrepancies with PDS are detected</td>
+</tr>
+<tr>
+<td align="left" markdown="1">Note 1</td>
+<td align="left" markdown="1">
+The Spine Mini Services interface does not allow direct updates to PDS.<br />
+Therefore where the data retrieved from PDS is believed to be incorrect, the Mini Services Client Application SHOULD trigger a local back-office process to resolve the problem. (For example this might involve a local Data Quality Administrator investigating, and potentially using separate full access to PDS to make updates if necessary)
+</td>
+</tr>
+</tbody>
+</table>

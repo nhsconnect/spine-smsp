@@ -2,18 +2,23 @@ topnav:
 - title: Topnav
   items:
     - title: News
-      url: news.html
+      url: /news
 
+#Topnav dropdowns
 topnav_dropdowns:
 - title: Topnav dropdowns
   folders:
-    - title: External Links
-      folderitems:        
-        - title: External Link 1
-          external_url: http://www.google.com/
-        - title: External Link 2
-          external_url: http://www.yahoo.com/        
+    - title: SMSP External Links
+      folderitems:
+        - title: NHS Developers Network
+          external_url: http://developer.nhs.uk/
+        - title: Code4Health
+          external_url: http://interoperability.code4health.org/projects/
+        - title: NHS Digital - Digital Delivery Centre
+          external_url: http://systems.digital.nhs.uk/ddc/spine-mini-service	  	  
     - title: Capability Packs
       folderitems:
-        - title: Capability One
-          url: capability_one.html
+        - title: Foundations
+          url: /foundations_intro.html
+        - title: Demographics Service
+          url: /demog_intro.html

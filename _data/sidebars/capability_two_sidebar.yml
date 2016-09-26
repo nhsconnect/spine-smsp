@@ -1,6 +1,6 @@
 entries:
-- title: Foundation
-  product: Foundation<br/>
+- title: Demographics
+  product: Demographics<br/>
   version: ITK2.0.2
   levels: one
   folders:
@@ -8,6 +8,6 @@ entries:
   - title: Requirements
     output: web, pdf
     folderitems:
-    - title: Foundations
-      url: /foundations_reqs.html
+    - title: Demographics
+      url: /demographics_reqs.html
       output: web, pdf

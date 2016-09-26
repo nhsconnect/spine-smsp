@@ -1,0 +1,42 @@
+---
+title: SMSP Test Data
+keywords: reference
+summary: "Details of the test data for use with the NHS Digital SMSP Test Environments"
+sidebar: mydoc_sidebar
+permalink: smsp_test_data.html
+folder: smsp
+toc: false
+---
+
+<h3>OpenTest - Test Data Details</h3>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">NHS Number</th>
+<th align="left">Date of Birth</th>
+<th align="left">Family Name</th>
+<th align="left">Given Name</th>
+<th align="left">Gender</th>
+<th align="left">Post Code</th>
+
+</tr>
+</thead>
+<tbody>
+
+{% for patient in site.data.open_test_data %}
+<tr>
+<td align="left" markdown="1">{{patient.NHS_NUMBER}}</td>
+<td align="left" markdown="1">{{patient.DATE_OF_BIRTH}}</td>
+<td align="left" markdown="1">{{patient.FAMILY_NAME}}</td>
+<td align="left" markdown="1">{{patient.GIVEN_NAME}}</td>
+<td align="left" markdown="1">{{patient.GENDER}}</td>
+<td align="left" markdown="1">{{patient.POST_CODE}}</td>
+</tr>
+{% endfor %}
+
+</tbody>
+</table>
