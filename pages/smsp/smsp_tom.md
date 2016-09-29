@@ -47,40 +47,51 @@ By defining a clear and documented assessment set (with associated guidelines an
 
 <div role="tabpanel" class="tab-pane" id="approval">
     <h2>Approval</h2>
-    <p>There are two phases.<br /><b>Phase 1</b> - details the individual who will assess the Usage and Settings information provided within this Target Operating Model. <u>This phase can also be used for developer organsation to valid potential use cases.</u><br /><b>Phase 2</b> - This section details the individual who has final approval for this Target Operating Model evaluation.</p></div>
+    <h3>[Completed typically by the project manager or individual responsible for the new deployment]</h3>
+	<p>There are two phases.<br />
+	<b>Phase 1</b> - details the individual who will assess the Usage and Settings information provided within this Target Operating Model. <u>This phase can also be used for developer organsation to valid potential use cases.</u><br /><b>Phase 2</b> - This section details the individual who has final approval for this Target Operating Model evaluation.</p>
+	<
+	</div>
 
 <div role="tabpanel" class="tab-pane" id="details">
     <h2>Details</h2>
-    <p>This section captures basic information about the Spine Mini Service being assessed.</p>
+    <h3>[Completed typically by the project manager or individual responsible for the new deployment]</h3>
+	<p>This section captures basic information about the Spine Mini Service being assessed.</p>
 </div>
 
 <div role="tabpanel" class="tab-pane" id="topology">
     <h2>Deployment Topology</h2>
+	<h3>[Completed typically by the technical lead responsible for the new deployment]</h3>
 <p>Shows the NHS Digital recognised topologies. One must be select as part of the evaluation process.</p>
 </div>
 
 <div role="tabpanel" class="tab-pane" id="contacts">
     <h2>Contacts</h2>
+	<h3>[Completed typically by the project manager or individual responsible for the new deployment]</h3>
 <p>This section provides a reference list of stakeholders who MAY need to be contacted, as an aid to building a virtual project team. It allows specific contact details to be recorded for those roles which are relevant - both for day-to-day practical purposes, and as an audit trail of those involved.</p>
 </div>
 
 <div role="tabpanel" class="tab-pane" id="contracts">
     <h2>Contracts</h2>
+	<h3>[Completed typically by the project manager or individual responsible for the new deployment, with assistance from technical lead]</h3>
 <p>This section captures information about the Organisation using the data and the associated legal agreements. Also Supplier agreement with NHS Digital.</p>
 </div>
 
 <div role="tabpanel" class="tab-pane" id="accountability">
     <h2>Accountability</h2>
+	<h3>[Completed typically by the project manager or individual responsible for the new deployment]</h3>
 <p>This section examines the respective responsibilities of suppliers and Deploying Health or Social Care Organisations. It provides best-practice guidance which Deploying Health or Social Care Organisations must consider when assuring the end to end connection. It defines areas that each party must action or consider.</p>
 </div>
 
 <div role="tabpanel" class="tab-pane" id="architecture">
     <h2>Architecture</h2>
+	<h3>[Completed typically by the technical lead responsible for the new deployment]</h3>
 <p>This section examines the system architecture to ensure that it is fit for purpose. It provides best-practice guidance which Deploying Health or Social Care Organisations must consider when assuring their own architectures. The intention is for the spreadsheet to act as a checklist and cross-reference to ensure that all necessary points are covered in more detailed technical documentation.</p>
 </div>
 
 <div role="tabpanel" class="tab-pane" id="ig">
     <h2>Information Governance</h2>
+	<h3>[Completed typically by the technical lead responsible for the client solution]</h3>
 <p>This section confirms the Information Governance (IG) controls required, and the mechanisms for implementation of each.
 The emphasis is on highlighting the business requirement for a particular IG control, rather than mandating that a particular technical mechanism be used.<br />
 For each IG control a number of recognised technical implementation mechanisms are listed, and use of these pre-established mechanisms can accelerate implementation.<br />
@@ -92,6 +103,7 @@ The IG checklist applies to all components within the solutin. It should be note
 
 <div role="tabpanel" class="tab-pane" id="clinical">
     <h2>Clinical Safety</h2>
+	<h3>[Completed typically by the clinical safety officer responsible for the new deployment]</h3>
 <p>This section confirms actions required to mitigate Clinical Safety risks.<br />
 If further guidance is needed then the NHS Digital Clinical Safety Group may be contacted at <a href="mailto:clinical.safety@nhs.net"> clinical.safety@nhs.net</a>
 </p>
@@ -99,6 +111,7 @@ If further guidance is needed then the NHS Digital Clinical Safety Group may be 
 
 <div role="tabpanel" class="tab-pane" id="smsgeneric">
     <h2>SMS Generic Client Requirements</h2>
+	<h3>[Completed typically by the technical lead responsible for the client solution]</h3>
 <p>This section assesses the application against the published set of Trust Operating Model Spine Mini Service Client Requirements.<br />
 These requirements effectively form the <a href="foundations_reqs.html">Foundation Requirements</a> capabilities.
 </p>
@@ -106,6 +119,7 @@ These requirements effectively form the <a href="foundations_reqs.html">Foundati
 
 <div role="tabpanel" class="tab-pane" id="smsdemog">
     <h2>SMS Demographics Requirements</h2>
+	<h3>[Completed typically by the technical lead responsible for the client solution]</h3>
 <p>This section assesses the application against the published set of Trust Operating Model Spine Mini Service Client Requirements.<br />
 These requirements effectively form the demographics <a href="demographics_reqs.html">Demographics Requirements</a> capabilities
 </p>
