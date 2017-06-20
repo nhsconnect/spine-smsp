@@ -6,7 +6,7 @@ sidebar: mydoc_sidebar
 permalink: smsp_capabilities.html
 folder: smsp
 ---
-Presently the NHS Digital Spine Mini Service capabilities are (a) the foundation of the service being an ITK compliant web service, and (b) the ITK compliant demographics service. 
+Presently the NHS Digital Spine Mini Service capabilities are (a) the foundation of the service being an ITK compliant web service, and (b) the ITK compliant demographics service.
 
 ## Foundations
 
