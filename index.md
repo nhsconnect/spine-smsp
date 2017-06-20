@@ -16,6 +16,11 @@ summary: A brief introduction to getting started.
 
 Standard paragraph text.
 
-# Level 2 Heading #
+## Level 2 Heading ##
+
+Test content
+
+* Bullet 1
+* Bullet 2
 
 Example external link to [Google](http://www.google.com).
