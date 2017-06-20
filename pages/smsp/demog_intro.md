@@ -7,7 +7,7 @@ permalink: demog_intro.html
 summary: Details of the requirements for SMSP services built upon the ITK Foundations. 
 toc: false
 ---
-{% include important.html content="The demographics requirements MUST be implemented for a consumer system to become NHS Digital accredited." %}
+{% include important.html content="The demographics requirements MUST be implemented for a consumer system to become NHS Digital conformant." %}
 
 ## What are the Demographic requirements for a service consumer?
 

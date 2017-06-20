@@ -8,7 +8,7 @@ permalink: foundations_intro.html
 summary: Foundation requirements for developing an ITK SMSP service.
 toc: false
 ---
-{% include important.html content="The foundation requirements MUST be implemented for a consumer system to become NHS Digital accredited." %}
+{% include important.html content="The foundation requirements MUST be implemented for a consumer system to become NHS Digital conformant." %}
 
 ## What are the foundations for a service consumer?
 
