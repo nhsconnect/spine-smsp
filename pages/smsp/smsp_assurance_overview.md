@@ -22,7 +22,7 @@ Currently they have no firm customers, but are confident they have a viable prod
 Acme Online are aware they need to be assured by NHS Digital, and would like to understand the process.
 
 ### Assessment
-The key point with this scenario is that the supplier currently has no immediate customer. The aim is to support the development of the product to a phase that NHS Digital can technically assure the solution and valid their proposed usecase. Once Acme Online have found a customer, the assurance process will be formally completed with the [Target Operating Model (TOM)](smsp_tom.html) being updated and through a first of type deployment with their customer. Once completed the solution will be 'fully assured'.
+In this scenario, the supplier has no immediate customer. The aim is to support the development of the product to a point at which NHS Digital can technically assure the solution and validate the proposed use cases. Once Acme Online have a customer, the assurance process will formally complete via the  [Target Operating Model (TOM)](smsp_tom.html) with a first of type deployment for that customer.
 
 ### How Scenario 1 is played out
 1. The Acme Online developer can use this site to understand how to develop against in the SMSP API. The [getting started](smsp_getting_started.html) page will allow a developer with suitable [environment](smsp_test_environments.html) access to very quickly connect to the SMSP API and start playing using the [test data](smsp_test_data.html) provided. In parallel Acme Online can submit a partially completed TOM (phase 1 usage and setting) to NHS Digital, who will provide an initial view on the acceptability of the usecase.

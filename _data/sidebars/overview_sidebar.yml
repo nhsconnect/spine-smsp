@@ -43,6 +43,19 @@ entries:
     - title: Glossary
       url: /smsp_glossary.html
       output: web, pdf
+ 
+  - title: Capabilities
+    output: web, pdf
+    folderitems:
+
+    - title: Foundations
+      url: /foundations_intro.html
+      output: web, pdf
+      type: homepage
+
+    - title: Demographics Service
+      url: /demog_intro.html
+      output: web, pdf
   
   - title: Explore
     output: web, pdf
