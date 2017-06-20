@@ -36,10 +36,6 @@ entries:
       url: /news.html
       output: web, pdf
 
-    - title: Capabilities
-      url: /smsp_capabilities.html
-      output: web, pdf
-
     - title: Glossary
       url: /smsp_glossary.html
       output: web, pdf
@@ -47,6 +43,11 @@ entries:
   - title: Capabilities
     output: web, pdf
     folderitems:
+
+    - title: SMSP Capabilities
+      url: /smsp_capabilities.html
+      output: web, pdf
+      type: homepage
 
     - title: Foundations
       url: /foundations_intro.html
